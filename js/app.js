@@ -1,24 +1,26 @@
 'use strict';
 
+const hours = ["6am", "7am", "8am", "9am", "10am", "11am",
+"12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm",];
 // Seattle Object
 const seattle = {
     name: 'Seattle Shop',
     minCust: 23,
     maxCust: 65, 
     avgCookieSold: 6.3,
-    hours: ["6am", "7am", "8am", "9am", "10am", "11am",
-     "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm",],
+    // hours: ["6am", "7am", "8am", "9am", "10am", "11am",
+    //  "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm",],
     cookiesPerHour: [],
     custPerHour: [],
     totalCookies: 0,
     getNumOfCust: function() {
-        for(let i = 0; i < this.hours.length; i++){
+        for(let i = 0; i < hours.length; i++){
             this.custPerHour.push(randomNumOfCust(this.minCust,this.maxCust));
         }
     },
     getNumOfCookies: function() {
         this.getNumOfCust();
-        for(let i = 0; i < this.hours.length; i++){
+        for(let i = 0; i < hours.length; i++){
             this.cookiesPerHour.push(Math.floor(this.custPerHour[i]*this.avgCookieSold));
             this.totalCookies += this.cookiesPerHour[i];
         }
@@ -41,10 +43,10 @@ const seattle = {
         const ul = document.createElement('ul');
         article.appendChild(ul);
         
-        for(let i = 0; i < this.hours.length; i++){
+        for(let i = 0; i < hours.length; i++){
             const li = document.createElement('li');
             // change to cookiesPerHour when done
-            li.textContent = `${this.hours[i]}: ${this.cookiesPerHour[i]} cookies`;
+            li.textContent = `${hours[i]}: ${this.cookiesPerHour[i]} cookies`;
             ul.appendChild(li);
         }
         
@@ -60,19 +62,19 @@ const tokyo = {
     minCust: 3,
     maxCust: 24, 
     avgCookieSold: 1.2,
-    hours: ["6am", "7am", "8am", "9am", "10am", "11am",
-     "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm",],
+    // hours: ["6am", "7am", "8am", "9am", "10am", "11am",
+    //  "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm",],
     cookiesPerHour: [],
     custPerHour: [],
     totalCookies: 0,
     getNumOfCust: function() {
-        for(let i = 0; i < this.hours.length; i++){
+        for(let i = 0; i < hours.length; i++){
             this.custPerHour.push(randomNumOfCust(this.minCust,this.maxCust));
         }
     },
     getNumOfCookies: function() {
         this.getNumOfCust();
-        for(let i = 0; i < this.hours.length; i++){
+        for(let i = 0; i < hours.length; i++){
             this.cookiesPerHour.push(Math.floor(this.custPerHour[i]*this.avgCookieSold));
             this.totalCookies += this.cookiesPerHour[i];
         }
@@ -95,10 +97,10 @@ const tokyo = {
         const ul = document.createElement('ul');
         article.appendChild(ul);
         
-        for(let i = 0; i < this.hours.length; i++){
+        for(let i = 0; i < hours.length; i++){
             const li = document.createElement('li');
             // change to cookiesPerHour when done
-            li.textContent = `${this.hours[i]}: ${this.cookiesPerHour[i]} cookies`;
+            li.textContent = `${hours[i]}: ${this.cookiesPerHour[i]} cookies`;
             ul.appendChild(li);
         }
         
@@ -114,19 +116,19 @@ const dubai = {
     minCust: 11,
     maxCust: 38, 
     avgCookieSold: 3.7,
-    hours: ["6am", "7am", "8am", "9am", "10am", "11am",
-     "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm",],
+    // hours: ["6am", "7am", "8am", "9am", "10am", "11am",
+    //  "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm",],
     cookiesPerHour: [],
     custPerHour: [],
     totalCookies: 0,
     getNumOfCust: function() {
-        for(let i = 0; i < this.hours.length; i++){
+        for(let i = 0; i < hours.length; i++){
             this.custPerHour.push(randomNumOfCust(this.minCust,this.maxCust));
         }
     },
     getNumOfCookies: function() {
         this.getNumOfCust();
-        for(let i = 0; i < this.hours.length; i++){
+        for(let i = 0; i < hours.length; i++){
             this.cookiesPerHour.push(Math.floor(this.custPerHour[i]*this.avgCookieSold));
             this.totalCookies += this.cookiesPerHour[i];
         }
@@ -149,10 +151,10 @@ const dubai = {
         const ul = document.createElement('ul');
         article.appendChild(ul);
         
-        for(let i = 0; i < this.hours.length; i++){
+        for(let i = 0; i < hours.length; i++){
             const li = document.createElement('li');
             // change to cookiesPerHour when done
-            li.textContent = `${this.hours[i]}: ${this.cookiesPerHour[i]} cookies`;
+            li.textContent = `${hours[i]}: ${this.cookiesPerHour[i]} cookies`;
             ul.appendChild(li);
         }
         
@@ -168,19 +170,19 @@ const paris = {
     minCust: 11,
     maxCust: 38, 
     avgCookieSold: 3.7,
-    hours: ["6am", "7am", "8am", "9am", "10am", "11am",
-     "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm",],
+    // hours: ["6am", "7am", "8am", "9am", "10am", "11am",
+    //  "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm",],
     cookiesPerHour: [],
     custPerHour: [],
     totalCookies: 0,
     getNumOfCust: function() {
-        for(let i = 0; i < this.hours.length; i++){
+        for(let i = 0; i < hours.length; i++){
             this.custPerHour.push(randomNumOfCust(this.minCust,this.maxCust));
         }
     },
     getNumOfCookies: function() {
         this.getNumOfCust();
-        for(let i = 0; i < this.hours.length; i++){
+        for(let i = 0; i < hours.length; i++){
             this.cookiesPerHour.push(Math.floor(this.custPerHour[i]*this.avgCookieSold));
             this.totalCookies += this.cookiesPerHour[i];
         }
@@ -203,10 +205,10 @@ const paris = {
         const ul = document.createElement('ul');
         article.appendChild(ul);
         
-        for(let i = 0; i < this.hours.length; i++){
+        for(let i = 0; i < hours.length; i++){
             const li = document.createElement('li');
             // change to cookiesPerHour when done
-            li.textContent = `${this.hours[i]}: ${this.cookiesPerHour[i]} cookies`;
+            li.textContent = `${hours[i]}: ${this.cookiesPerHour[i]} cookies`;
             ul.appendChild(li);
         }
         
@@ -222,19 +224,19 @@ const lima = {
     minCust: 11,
     maxCust: 38, 
     avgCookieSold: 3.7,
-    hours: ["6am", "7am", "8am", "9am", "10am", "11am",
-     "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm",],
+    // hours: ["6am", "7am", "8am", "9am", "10am", "11am",
+    //  "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm",],
     cookiesPerHour: [],
     custPerHour: [],
     totalCookies: 0,
     getNumOfCust: function() {
-        for(let i = 0; i < this.hours.length; i++){
+        for(let i = 0; i < hours.length; i++){
             this.custPerHour.push(randomNumOfCust(this.minCust,this.maxCust));
         }
     },
     getNumOfCookies: function() {
         this.getNumOfCust();
-        for(let i = 0; i < this.hours.length; i++){
+        for(let i = 0; i < hours.length; i++){
             this.cookiesPerHour.push(Math.floor(this.custPerHour[i]*this.avgCookieSold));
             this.totalCookies += this.cookiesPerHour[i];
         }
@@ -257,10 +259,10 @@ const lima = {
         const ul = document.createElement('ul');
         article.appendChild(ul);
         
-        for(let i = 0; i < this.hours.length; i++){
+        for(let i = 0; i < hours.length; i++){
             const li = document.createElement('li');
             // change to cookiesPerHour when done
-            li.textContent = `${this.hours[i]}: ${this.cookiesPerHour[i]} cookies`;
+            li.textContent = `${hours[i]}: ${this.cookiesPerHour[i]} cookies`;
             ul.appendChild(li);
         }
         

@@ -1,0 +1,9 @@
+* {
+    color:salmon;
+    background-color: #488D9A;
+    /* background-color: #B7E769; */
+}
+
+h1, h2 {
+    border: 2px solid #B7E769;
+}
