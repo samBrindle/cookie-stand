@@ -16,12 +16,6 @@ function Location(city, minCust, maxCust, avgCookieSold) {
     allStores.push(this);
 }
 
-// function
-// totalHourlCookies
-// for loop i < allStores.length
-//      for loop j < hours.length
-//         totalHourlyCOokies[j] += allStores[i].cookiesPerHour[j]
-
 //help from TA David
 function getHourlyTotals() {
     console.log(allStores);
