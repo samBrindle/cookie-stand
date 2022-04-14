@@ -4,10 +4,36 @@
     /* background-color: #B7E769; */
 }
 
-/* h1, h2 {
+h1, h2 {
     border: 2px solid #B7E769;
-} */
+}
 
 th, td, tr, table {
     border: 2px solid #B7E769;
+}
+
+.locations {
+    border: 2px solid darkslategray;
+    width: 50%;
+}
+
+img {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.pictures {
+    display: flex;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+div {
+    width: 50%
 }

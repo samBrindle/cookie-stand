@@ -18,16 +18,11 @@ function Location(city, minCust, maxCust, avgCookieSold) {
 
 //help from TA David
 function getHourlyTotals() {
-    console.log(allStores);
-    console.log(totalHourlyCookies);
     for(let i = 0; i < allStores.length; i++){
         for(let j = 0; j < hours.length; j++){
-            console.log(allStores[i].cookiesPerHour)
             totalHourlyCookies[j] += allStores[i].cookiesPerHour[j];
         }
     }
-    console.log(allStores);
-    console.log(totalHourlyCookies);
 }
 
 Location.prototype.getNumOfCust = function() {
@@ -149,7 +144,6 @@ function renderFooter() {
         realFooterCell.textContent = totalHourlyCookies[i];
     }
 }
-
 
 renderHeader();
 seattle.render();
