@@ -131,19 +131,36 @@ function renderFooter() {
     const tableElem = document.getElementById('cookieTable');
     article.appendChild(tableElem);
 
-    const headerRow = document.createElement('tr');
-    tableElem.appendChild(headerRow);
+    const footerRow = document.createElement('tfoot');
+    tableElem.appendChild(footerRow);
     
     const totalFooterCell = document.createElement('th');
-    headerRow.appendChild(totalFooterCell);
+    footerRow.appendChild(totalFooterCell);
     totalFooterCell.textContent = 'Total';
     
     for(let i = 0; i < hours.length; i++){
         const realFooterCell = document.createElement('th');
-        headerRow.appendChild(realFooterCell);
+        footerRow.appendChild(realFooterCell);
         realFooterCell.textContent = totalHourlyCookies[i];
     }
 }
+
+const storeForm = document.getElementById('addStore');
+
+console.log(addStore);
+
+storeForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const city = event.target.City.value;
+    const minCust = parseInt(event.target.minCust.value);
+    const maxCust = parseInt(event.target.maxCust.value);
+    const avgCookiesSold = parseFloat(event.target.avgCookiesSold.value);
+
+    const newLocation = new Location(city, minCust, maxCust, avgCookiesSold);
+    newLocation.render();
+    storeForm.reset();
+}
+);
 
 renderHeader();
 seattle.render();
