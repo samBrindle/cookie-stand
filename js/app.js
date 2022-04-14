@@ -131,16 +131,16 @@ function renderFooter() {
     const tableElem = document.getElementById('cookieTable');
     article.appendChild(tableElem);
 
-    const headerRow = document.createElement('tr');
-    tableElem.appendChild(headerRow);
+    const footerRow = document.createElement('tfoot');
+    tableElem.appendChild(footerRow);
     
     const totalFooterCell = document.createElement('th');
-    headerRow.appendChild(totalFooterCell);
+    footerRow.appendChild(totalFooterCell);
     totalFooterCell.textContent = 'Total';
     
     for(let i = 0; i < hours.length; i++){
         const realFooterCell = document.createElement('th');
-        headerRow.appendChild(realFooterCell);
+        footerRow.appendChild(realFooterCell);
         realFooterCell.textContent = totalHourlyCookies[i];
     }
 }

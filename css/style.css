@@ -57,8 +57,21 @@ header {
 }
 
 #cookieKit {
-    border: 2px solid #B7E769;
+    background-color: #B7E769;
     font-size: larger;
     text-align: center;
     margin-top: 30%;
+}
+
+#pageSwitch {
+    text-align: center;
+    font-size: 40px;
+    margin-left:34%;
+    margin-top: 14%;
+    background-color: #B7E769;
+}
+
+.required:after {
+    content: " *";
+    color: red;
 }
