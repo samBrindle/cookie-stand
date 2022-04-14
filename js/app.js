@@ -145,6 +145,23 @@ function renderFooter() {
     }
 }
 
+const storeForm = document.getElementById('addStore');
+
+console.log(addStore);
+
+storeForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const city = event.target.City.value;
+    const minCust = parseInt(event.target.minCust.value);
+    const maxCust = parseInt(event.target.maxCust.value);
+    const avgCookiesSold = parseFloat(event.target.avgCookiesSold.value);
+
+    const newLocation = new Location(city, minCust, maxCust, avgCookiesSold);
+    newLocation.render();
+    storeForm.reset();
+}
+);
+
 renderHeader();
 seattle.render();
 tokyo.render();
