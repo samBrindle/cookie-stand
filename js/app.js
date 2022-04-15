@@ -25,6 +25,12 @@ function getHourlyTotals() {
     }
 }
 
+function clearHourlyTotals() {
+    for(let i = 0; i < totalHourlyCookies.length; i++){
+        totalHourlyCookies[i] = 0;
+    }
+}
+
 Location.prototype.getNumOfCust = function() {
     for(let i = 0; i < hours.length; i++){
         this.custPerHour.push(randomNumOfCust(this.minCust,this.maxCust));
@@ -118,6 +124,9 @@ function renderHeader(){
         realHourHeaderCell.textContent = hours[i];
     }
 }
+
+let footerRow = null;
+
 function renderFooter() {
     const parentElem = document.getElementById('locationProfiles');
         
@@ -131,7 +140,7 @@ function renderFooter() {
     const tableElem = document.getElementById('cookieTable');
     article.appendChild(tableElem);
 
-    const footerRow = document.createElement('tfoot');
+    footerRow = document.createElement('tfoot');
     tableElem.appendChild(footerRow);
     
     const totalFooterCell = document.createElement('th');
@@ -157,8 +166,15 @@ storeForm.addEventListener('submit', function(event) {
     const avgCookiesSold = parseFloat(event.target.avgCookiesSold.value);
 
     const newLocation = new Location(city, minCust, maxCust, avgCookiesSold);
+    
+    allStores.push(newLocation)
+
+    footerRow.innerHTML = '';
     newLocation.render();
     storeForm.reset();
+    clearHourlyTotals();
+    getHourlyTotals();
+    renderFooter();
 }
 );
 
